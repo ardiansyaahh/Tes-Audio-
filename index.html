@@ -4,21 +4,35 @@
   <meta charset="UTF-8">
   <title>Musik Otomatis</title>
   <style>
-    body {
-      text-align: center;
-      padding-top: 100px;
-      font-family: Arial, sans-serif;
+    #playButton {
+      display: none; /* Tombol disembunyikan */
     }
   </style>
 </head>
 <body>
-  <h1>Selamat datang!</h1>
-  <p>Musik otomatis diputar di latar belakang.</p>
+  <h1>Halaman dengan Musik</h1>
+  <p>Sentuh layar untuk mulai musik</p>
 
-  <!-- Audio autoplay tanpa tombol -->
-  <audio autoplay loop>
+  <audio id="audio" autoplay loop>
     <source src="musik.mp3" type="audio/mpeg">
-    Browser kamu gak support tag audio.
+    Browser tidak mendukung audio.
   </audio>
+
+  <button id="playButton">Mainkan Musik</button>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const btn = document.getElementById('playButton');
+
+    // Untuk browser yang blokir autoplay
+    document.body.addEventListener('click', () => {
+      audio.play();
+    }, { once: true }); // cukup sekali aja
+
+    // Bisa juga manual pakai tombol kalau mau
+    btn.addEventListener('click', () => {
+      audio.play();
+    });
+  </script>
 </body>
 </html>
