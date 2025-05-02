@@ -2,34 +2,23 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Halaman dengan Musik Backsound</title>
+  <title>Musik Otomatis</title>
   <style>
     body {
       text-align: center;
       padding-top: 100px;
       font-family: Arial, sans-serif;
     }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 8px;
-    }
   </style>
 </head>
 <body>
-  <h1>Selamat Datang di Halamanku</h1>
-  <p>Klik tombol di bawah untuk mulai musik backsound!</p>
+  <h1>Halaman dengan Musik Otomatis</h1>
+  <p>Musik diputar otomatis di latar belakang</p>
 
-  <button onclick="document.getElementById('bgMusic').play()">Putar Musik</button>
-
-  <!-- Audio dari GitHub Pages -->
-  <audio id="bgMusic" loop>
+  <!-- Audio autoplay -->
+  <audio id="bgMusic" autoplay loop>
     <source src="musik.mp3" type="audio/mpeg">
-    Browser kamu gak support audio tag.
+    Browser kamu tidak mendukung audio.
   </audio>
 </body>
 </html>
